@@ -28,16 +28,17 @@ void freeGraph(Graph *g){
     free(g->table);
 }
 
-void addDirectedEdge(Graph *g, unsigned int from, unsigned int to){
+void addDirectedEdge(Graph *g, unsigned int from, unsigned int to, int weight){
     if (from < g->len && to < g->len){    
-    g->table[from][to] = 1;
+    g->table[from][to] = weight;
     }
 }
 
-void addEdge(Graph *g, unsigned int from, unsigned int to){
-    addDirectedEdge(g, from, to);
-    addDirectedEdge(g, to, from);
+void addEdge(Graph *g, unsigned int from, unsigned int to, int weight){
+    addDirectedEdge(g, from, to, weight);
+    addDirectedEdge(g, to, from, weight);
 }
+
 
 bool hasEdge(Graph *g, unsigned int from, unsigned int to){
     if (from < g->len && to < g->len) {

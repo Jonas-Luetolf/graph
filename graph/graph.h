@@ -14,8 +14,8 @@ Graph createGraph(unsigned int len);
 void freeGraph(Graph *g);
 
 
-void addEdge(Graph *g, unsigned int from, unsigned int to);
-void addDirectedEdge(Graph *g, unsigned int from, unsigned int to);
+void addEdge(Graph *g, unsigned int from, unsigned int to,int weight);
+void addDirectedEdge(Graph *g, unsigned int from, unsigned int to, int weight);
 
 bool hasEdge(Graph *g, unsigned int from, unsigned int to);
 
