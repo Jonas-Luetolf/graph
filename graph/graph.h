@@ -18,6 +18,8 @@ void addEdge(Graph *g, unsigned int from, unsigned int to,int weight);
 void addDirectedEdge(Graph *g, unsigned int from, unsigned int to, int weight);
 
 bool hasEdge(Graph *g, unsigned int from, unsigned int to);
+int * getneighbours(Graph *g, unsigned int node, int* retsize);
+
 
 void printGraph(Graph *g);
 #endif

@@ -50,6 +50,29 @@ bool hasEdge(Graph *g, unsigned int from, unsigned int to){
     }
 }
 
+int *getneighbours(Graph *g, unsigned int node, int *retsize){
+    *retsize = 0;
+
+    int *arr = malloc(0*sizeof(int));
+    if (arr == NULL){
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i=0; i<g->len; i++){
+        if (g->table[node][i] != 0){
+
+            // reallocate memory for neighbours array
+            if (reallocarray(arr, *retsize + 1, sizeof(int))==NULL){
+                exit(EXIT_FAILURE);
+            }
+
+            *retsize+=1;
+            arr[*retsize-1]=i;
+        }
+    }
+    return arr;
+}
+
 
 
 void printGraph(Graph *g){
